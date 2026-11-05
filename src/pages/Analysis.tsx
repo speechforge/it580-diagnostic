@@ -444,12 +444,8 @@ export default function Analysis() {
               </CardContent>
             </Card>
 
-            <div className="text-center space-y-1.5 text-xs text-muted-foreground">
-              <p>DA-IICT IT 580: Data Structures & Algorithms • Assignments 5 to 12</p>
-              <p className="text-[11px] text-muted-foreground/80 flex items-center justify-center gap-1.5">
-                <Sparkles className="h-3 w-3 text-primary/70 shrink-0" />
-                <span>AI can make mistakes.</span>
-              </p>
+            <div className="text-center text-xs text-muted-foreground">
+              DA-IICT IT 580: Data Structures & Algorithms • Assignments 5 to 12
             </div>
           </div>
         ) : (
