@@ -383,7 +383,7 @@ export default function Analysis() {
                   Enter Your Contact Phone Number
                 </CardTitle>
                 <CardDescription className="text-xs">
-                  Enter your registered 10-digit mobile number or Student ID to access your private report.
+                  Enter your registered 10-digit mobile number or Student ID to access your diagnostic report.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -448,7 +448,7 @@ export default function Analysis() {
               <p>DA-IICT IT 580: Data Structures & Algorithms • Assignments 5 to 12</p>
               <p className="text-[11px] text-muted-foreground/80 flex items-center justify-center gap-1.5">
                 <Sparkles className="h-3 w-3 text-primary/70 shrink-0" />
-                <span>Generative AI Disclaimer: AI can make mistakes. Verify critical concepts.</span>
+                <span>AI can make mistakes.</span>
               </p>
             </div>
           </div>
@@ -647,7 +647,7 @@ export default function Analysis() {
                             </div>
                             <div className="flex items-center gap-1.5 pt-1 border-t border-border/30 text-[10px] text-muted-foreground">
                               <Sparkles className="h-3 w-3 text-primary/70 shrink-0" />
-                              <span>AI-assisted concept recall • AI can make mistakes. Verify with course material.</span>
+                              <span>AI can make mistakes.</span>
                             </div>
                           </div>
                         </CardContent>
@@ -814,14 +814,12 @@ export default function Analysis() {
 
       </main>
 
-      {/* Global Generative AI Disclaimer Footer */}
-      <footer className="mt-12 py-6 border-t border-border/40 text-center text-xs text-muted-foreground print:hidden bg-background/50">
-        <div className="max-w-3xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2">
-          <Sparkles className="h-4 w-4 text-primary shrink-0" />
-          <p className="leading-relaxed">
-            <span className="font-semibold text-foreground">Generative AI Disclaimer:</span> Content and targeted study notes are generated with AI assistance. <span className="font-semibold text-foreground underline decoration-primary/40 underline-offset-2">AI can make mistakes.</span> Please verify critical algorithmic proofs, recurrences, and concepts with official lecture notes and textbooks.
-          </p>
-        </div>
+      {/* AI Disclaimer Footer */}
+      <footer className="mt-8 py-4 text-center text-xs text-muted-foreground print:hidden">
+        <p className="flex items-center justify-center gap-1.5">
+          <Sparkles className="h-3.5 w-3.5 text-primary/70 shrink-0" />
+          <span>AI can make mistakes.</span>
+        </p>
       </footer>
     </div>
   );
