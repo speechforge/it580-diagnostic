@@ -370,24 +370,8 @@ export default function Analysis() {
                 Student Diagnostic Access
               </h1>
               <p className="text-xs sm:text-sm text-muted-foreground">
-                Select your name and enter your registered contact phone number to view your personalized revision plan and performance tier.
+                Enter your registered contact phone number or Student ID to view your personalized revision plan and chapter study points.
               </p>
-            </div>
-
-            {/* Performance Tier Guide Card */}
-            <div className="grid grid-cols-3 gap-2 text-center text-xs">
-              <div className="p-2.5 rounded-xl border border-red-200 dark:border-red-900/50 bg-red-500/5">
-                <p className="font-bold text-red-600 dark:text-red-400">Critical</p>
-                <p className="text-[10px] text-muted-foreground">High Revision Priority</p>
-              </div>
-              <div className="p-2.5 rounded-xl border border-amber-200 dark:border-amber-900/50 bg-amber-500/5">
-                <p className="font-bold text-amber-600 dark:text-amber-400">Moderate</p>
-                <p className="text-[10px] text-muted-foreground">Targeted Practice</p>
-              </div>
-              <div className="p-2.5 rounded-xl border border-emerald-200 dark:border-emerald-900/50 bg-emerald-500/5">
-                <p className="font-bold text-emerald-600 dark:text-emerald-400">Proficient</p>
-                <p className="text-[10px] text-muted-foreground">Strong Recall</p>
-              </div>
             </div>
 
             <Card className="border-border shadow-md">
@@ -526,66 +510,6 @@ export default function Analysis() {
                 </div>
               </div>
             </div>
-
-            {/* Benchmark Card: Class Difficulty Benchmark by Assignment (5 to 12) */}
-            <Card className="border-border">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-sm sm:text-base font-bold flex items-center gap-2">
-                  <BarChart2 className="h-4 w-4 text-primary" />
-                  Class Difficulty Benchmark by Assignment (5 to 12)
-                </CardTitle>
-                <CardDescription className="text-xs">
-                  Red indicates high cohort difficulty; Amber indicates moderate difficulty; Green indicates proficient understanding.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5">
-                  {data.classOverview.assignments.map(a => {
-                    const isHigh = a.priority === 'HIGH';
-                    const isProf = a.priority === 'LOW';
-
-                    const studentAssign = currentStudent.assignments.find(sa => sa.assignmentNumber === a.assignmentNumber);
-                    const studentAcc = studentAssign?.accuracy ?? 0;
-
-                    return (
-                      <div
-                        key={a.assignmentNumber}
-                        className={`p-2.5 rounded-xl border flex flex-col justify-between gap-1.5 ${
-                          isHigh
-                            ? 'bg-red-500/5 border-red-200 dark:border-red-900/60'
-                            : isProf
-                            ? 'bg-emerald-500/5 border-emerald-200 dark:border-emerald-900/60'
-                            : 'bg-amber-500/5 border-amber-200 dark:border-amber-900/60'
-                        }`}
-                      >
-                        <div className="flex items-center justify-between">
-                          <span className="text-[11px] font-mono font-bold">Assign {a.assignmentNumber}</span>
-                          <span className={`text-[10px] font-bold ${
-                            isHigh ? 'text-red-600' : isProf ? 'text-emerald-600' : 'text-amber-600'
-                          }`}>
-                            {isHigh ? 'High Difficulty' : isProf ? 'Proficient' : 'Moderate'}
-                          </span>
-                        </div>
-                        <Progress
-                          value={a.accuracy}
-                          className={`h-1.5 ${
-                            isHigh ? '[&>div]:bg-red-600' : isProf ? '[&>div]:bg-emerald-600' : '[&>div]:bg-amber-500'
-                          }`}
-                        />
-                        <div className="text-[10px] text-muted-foreground flex items-center justify-between pt-0.5 border-t border-border/40">
-                          <span>Status:</span>
-                          <span className={`font-bold ${
-                            studentAcc >= 80 ? 'text-emerald-600' : studentAcc >= 60 ? 'text-amber-600' : 'text-red-600'
-                          }`}>
-                            {studentAcc >= 80 ? 'Proficient' : studentAcc >= 60 ? 'Review' : 'Priority'}
-                          </span>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
 
             {/* ============================================================== */}
             {/* GUIDED CHAPTER STUDY FLOW: STUDY POINTS FIRST, THEN QUESTIONS ON CLICK */}
