@@ -309,10 +309,15 @@ export default function Analysis() {
       <header className="sticky top-0 z-30 bg-background/90 backdrop-blur-md border-b border-border shadow-xs print:hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
+            <img
+              src={`${import.meta.env.BASE_URL}favicon.png`}
+              alt="IT 580 Logo"
+              className="h-9 w-9 rounded-xl object-contain shadow-xs border border-border/60 bg-background"
+            />
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-base sm:text-lg text-primary tracking-tight">
-                  IT 580 Diagnostic Portal
+                  IT 580: Advanced Algorithms
                 </span>
                 <Badge variant="outline" className="text-xs font-semibold px-2 py-0 border-primary/30 text-primary">
                   Assignments 5–12
@@ -365,9 +370,11 @@ export default function Analysis() {
         {!currentStudent ? (
           <div className="max-w-md mx-auto my-8 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="text-center space-y-2">
-              <div className="inline-flex h-12 w-12 rounded-2xl bg-primary/10 items-center justify-center text-primary mb-1">
-                <Lock className="h-6 w-6" />
-              </div>
+              <img
+                src={`${import.meta.env.BASE_URL}favicon.png`}
+                alt="IT 580 Logo"
+                className="h-14 w-14 mx-auto rounded-2xl object-contain shadow-xs border border-border/80 bg-background p-1 mb-1"
+              />
               <h1 className="text-2xl font-extrabold tracking-tight text-foreground">
                 Student Diagnostic Access
               </h1>
@@ -445,7 +452,7 @@ export default function Analysis() {
             </Card>
 
             <div className="text-center text-xs text-muted-foreground">
-              DA-IICT IT 580 • Assignments 5 to 12
+              DA-IICT IT 580: Advanced Algorithms • Assignments 5 to 12
             </div>
           </div>
         ) : (
@@ -504,7 +511,7 @@ export default function Analysis() {
                     <BookOpen className="h-3.5 w-3.5" /> Assessment Scope
                   </p>
                   <p className="text-xs text-foreground font-medium">
-                    Continuous Lab Diagnostic • Assignments 5 to 12
+                    Continuous Lab Diagnostic • IT 580: Advanced Algorithms
                   </p>
                   <p className="text-[11px] text-muted-foreground leading-relaxed">
                     Designed for concept revision, algorithm recall, and targeted practice before exams.
