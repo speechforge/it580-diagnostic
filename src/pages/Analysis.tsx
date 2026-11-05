@@ -445,7 +445,7 @@ export default function Analysis() {
             </Card>
 
             <div className="text-center text-xs text-muted-foreground">
-              DA-IICT IT 580: Data Structures & Algorithms • Assignments 5 to 12
+              DA-IICT IT 580 • Assignments 5 to 12
             </div>
           </div>
         ) : (
