@@ -22,7 +22,9 @@ import {
   FileQuestion,
   ChevronDown,
   Layers,
-  ArrowRight
+  ArrowRight,
+  Sparkles,
+  Info
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -442,8 +444,12 @@ export default function Analysis() {
               </CardContent>
             </Card>
 
-            <div className="text-center text-xs text-muted-foreground">
-              DA-IICT IT 580: Data Structures & Algorithms • Assignments 5 to 12
+            <div className="text-center space-y-1.5 text-xs text-muted-foreground">
+              <p>DA-IICT IT 580: Data Structures & Algorithms • Assignments 5 to 12</p>
+              <p className="text-[11px] text-muted-foreground/80 flex items-center justify-center gap-1.5">
+                <Sparkles className="h-3 w-3 text-primary/70 shrink-0" />
+                <span>Generative AI Disclaimer: AI can make mistakes. Verify critical concepts.</span>
+              </p>
             </div>
           </div>
         ) : (
@@ -639,6 +645,10 @@ export default function Analysis() {
                                 <span className="text-muted-foreground leading-relaxed">{q.pitfall}</span>
                               </div>
                             </div>
+                            <div className="flex items-center gap-1.5 pt-1 border-t border-border/30 text-[10px] text-muted-foreground">
+                              <Sparkles className="h-3 w-3 text-primary/70 shrink-0" />
+                              <span>AI-assisted concept recall • AI can make mistakes. Verify with course material.</span>
+                            </div>
                           </div>
                         </CardContent>
                       </Card>
@@ -803,6 +813,16 @@ export default function Analysis() {
         )}
 
       </main>
+
+      {/* Global Generative AI Disclaimer Footer */}
+      <footer className="mt-12 py-6 border-t border-border/40 text-center text-xs text-muted-foreground print:hidden bg-background/50">
+        <div className="max-w-3xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2">
+          <Sparkles className="h-4 w-4 text-primary shrink-0" />
+          <p className="leading-relaxed">
+            <span className="font-semibold text-foreground">Generative AI Disclaimer:</span> Content and targeted study notes are generated with AI assistance. <span className="font-semibold text-foreground underline decoration-primary/40 underline-offset-2">AI can make mistakes.</span> Please verify critical algorithmic proofs, recurrences, and concepts with official lecture notes and textbooks.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
