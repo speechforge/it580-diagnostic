@@ -307,16 +307,6 @@ export default function Analysis() {
       <header className="sticky top-0 z-30 bg-background/90 backdrop-blur-md border-b border-border shadow-xs print:hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => navigate('/')}
-              className="gap-2 text-muted-foreground hover:text-foreground"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              <span className="hidden sm:inline">Back to Home</span>
-            </Button>
-            <div className="h-5 w-px bg-border hidden sm:block" />
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-base sm:text-lg text-primary tracking-tight">
